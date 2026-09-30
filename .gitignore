@@ -1,0 +1,39 @@
+#ML models
+*.onnx
+*.tflite
+*.pt
+*.engine
+
+#Build Output 
+dist/
+build/
+
+#Datasets
+datasets/
+runs/
+
+
+#environments
+dl_env/
+.venv
+.env
+.env.local
+.env.*.local
+
+#python cache
+__pycache__/
+
+
+#Node Modules
+node_modules/
+
+#Stitch UI
+stitch_ui/
+photos/
+
+#VS code
+.vscode
+
+
+#OS
+thums.db
