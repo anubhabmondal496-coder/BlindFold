@@ -3,8 +3,8 @@ import cv2
 model_ = YOLO("yolo26n.pt")
 cap = cv2.VideoCapture(0)
 while cap.isOpened():
-    r,fps = cap.read()
-    if r== True:
+    r_,fps = cap.read()
+    if r_== True:
         fps = cv2.flip(fps,1)
         fps = cv2.resize(fps,(640,840))
 
