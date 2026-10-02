@@ -11,6 +11,9 @@ build/
 #Datasets
 datasets/
 runs/
+Currency/
+combined_dataset/
+*.zip
 
 
 #environments
