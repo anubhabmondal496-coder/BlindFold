@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 import os
 
-classes = ["10", "20", "50", "100", "200", "500"]
+classes = ["10", "20", "50", "100", "200", "500","Background"]
 model_path = "Currency_checking_model.h5"
 if not os.path.exists(model_path):
     raise FileNotFoundError(f"Model file '{model_path}' not found in the current directory.")
@@ -31,13 +31,15 @@ while cap.isOpened():
     input_img = input_img.astype(np.float32) / 255.0
     input_tensor = np.expand_dims(input_img, axis=0)
 
-    # Predict once
     prediction = model.predict(input_tensor, verbose=0)
     predicted_idx = np.argmax(prediction[0])
     confidence = float(prediction[0][predicted_idx]) * 100
 
     predicted_label = classes[predicted_idx]
-    status_text = f"Currency: Rs {predicted_label} ({confidence:.1f}%)"
+    if predicted_label == "Background":
+        status_text = f"Background (No currency detected, {confidence:.1f}%)"
+    else:
+        status_text = f"Currency: Rs {predicted_label} ({confidence:.1f}%)"
     
     cv2.rectangle(display_frame, (15, 15), (420, 70), (15, 23, 42), -1)
 

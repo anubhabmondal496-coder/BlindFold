@@ -30,7 +30,7 @@ model.summary()
 history = model.fit(
     X_train, y_train,
     batch_size=32,
-    epochs=20,
+    epochs=40,
     validation_data=(X_val, y_val),
     callbacks= [stop_at_96]
 )
