@@ -70,6 +70,22 @@ export default function App() {
         }}
       />
 
+      {/* Subtle Visual Prototype Watermark (Left Side of Centered UI) */}
+      <aside
+        aria-label="Prototype notice"
+        className="hidden md:flex fixed left-4 lg:left-8 top-28 z-40 max-w-[210px] flex-col gap-1.5 p-3 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md border border-tactile-slate/20 shadow-sm pointer-events-none select-none transition-all"
+      >
+        <div className="flex items-center gap-1.5 text-secondary">
+          <span className="material-symbols-outlined text-[17px]">smartphone</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
+            Preview Notice
+          </span>
+        </div>
+        <p className="text-[12px] font-medium text-on-surface-variant leading-snug">
+          This is a visual prototype for the BlindFold Android app.
+        </p>
+      </aside>
+
       {/* Main Content Area */}
       <main className="flex-1 w-full pt-24 px-4 max-w-2xl mx-auto flex flex-col">
         {currentTab === 'walking' && (
@@ -129,6 +145,13 @@ export default function App() {
             onVibrate={vibrate}
           />
         )}
+
+        {/* Subtle mobile prototype note */}
+        <div className="md:hidden pb-6 text-center pointer-events-none select-none">
+          <p className="text-[11px] font-medium text-on-surface-variant/75 tracking-wide">
+            Visual prototype for the BlindFold Android app
+          </p>
+        </div>
       </main>
 
       {/* High-Contrast Bottom Navigation Bar */}
