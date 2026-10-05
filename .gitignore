@@ -3,6 +3,7 @@
 *.tflite
 *.pt
 *.engine
+*.h5
 
 #Build Output 
 dist/
@@ -13,6 +14,10 @@ datasets/
 runs/
 Currency/
 combined_dataset/
+stair_dataset/
+pothole*/
+zebra*/
+Zebra_crossing/
 *.zip
 
 
@@ -33,6 +38,7 @@ node_modules/
 #Stitch UI
 stitch_ui/
 photos/
+Models/
 
 #VS code
 .vscode
